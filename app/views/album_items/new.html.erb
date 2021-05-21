@@ -1,0 +1,21 @@
+<h1>アルバムに追加</h1>
+<div>
+<%= link_to "キャンセル", album_path(@album.id), class: :nav__btn %>
+</div>
+<%= form_with model: @album_item, local: true do |f| %>
+<div>
+<%= f.label :アイテム選択, class: 'item-form__label' %>
+<% if @items == [] %>
+ 追加できるアイテムがありません
+<% else %>
+<%= f.collection_select(:item_id, @items, :id, :title, {},{class:"select-box", id:"item-sales-status"}) %>
+<%= @items %>
+</div>
+
+<%= f.hidden_field :album_id, class: 'album_name album-form__input', value: @album.id %>
+
+<div>
+<%= f.submit class: :nav__btn %>
+</div>
+<% end %>
+<% end %>

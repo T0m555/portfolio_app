@@ -1,0 +1,17 @@
+<h1>アイテム新規作成</h1>
+<%= link_to "キャンセル", items_path, class: :nav__btn %>
+<%= form_with(model: @item, local: true) do |f| %>
+<div>
+<%= f.label :アイテム名, class: 'item-form__label' %>
+<%= f.text_field :title, class: 'item_name item-form__input', placeholder: 'アイテム名を入力してください' %>
+</div>
+<div>
+<%= f.label :アイテムURL, class: 'item-form__label' %>
+<%= f.text_field :url, class: 'item_url item-form__input', placeholder: 'URLを入力してください' %>
+</div>
+<div>
+<%= f.label :ジャンル, class: 'item-form__label' %>
+<%= f.collection_select(:genre_id, @genres, :id, :name, {}, {class:"select-box", id:"item-sales-status"} ) %>
+</div>
+<%= f.submit class: :nav__btn %>
+<% end %>

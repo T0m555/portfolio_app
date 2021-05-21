@@ -1,0 +1,28 @@
+<h1>アルバム一覧</h1>
+<main class="main">
+  <div class="inner">
+    <% if user_signed_in? %>
+      <div class="greeting">
+         こんにちは、 
+         <%= link_to " #{current_user.name} さん", root_path, class: :greeting__link%>
+        <div>
+              <%= link_to "アルバム新規作成", new_album_path, class: :nav__btn %>
+              <%= link_to "トップページへ戻る", root_path, class: :nav__btn %> 
+        <div>
+        </div>
+    <% end %>
+    <%= "#{current_user.name}さんのアルバム一覧" %>
+    <div class="background">
+
+    <% if @albums == [] %>
+    <% else %>
+        <% @albums.each do |album| %>
+          <div class="card">
+              <%= link_to album.title, album_path(album.id) %>
+          </div>
+        <% end %>
+    <% end %>
+
+    </div>
+  </div>
+</main>
