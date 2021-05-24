@@ -1,13 +1,41 @@
-<h1>トップページ</h1>
+
 <main class="main">
+
   <div class="inner">
+  <h1>トップページ</h1>
     <% if user_signed_in? %>
       <div class="greeting">
          こんにちは、 
          <%= link_to " #{current_user.name} さん", root_path, class: :greeting__link%>
-        <div>
-          <%= link_to "アルバムページへ", albums_path, class: :nav__btn %>
-          <%= link_to "アイテムページへ", items_path, class: :nav__btn %>
+
+         <div class="tile_table">
+          <%= link_to albums_path do %>
+          <div class="tile">
+            <div class="tile_content">
+              <%= image_tag "icon_album.png"%>
+              <%= "アルバム一覧" %>
+            </div>
+          </div>
+        　<% end %>
+
+          <%= link_to items_path do %>
+          <div class="tile">
+            <div class="tile_content">
+              <%= image_tag "icon_item.png"%>
+              <%= "アイテム一覧" %>
+            </div>
+          </div>
+          <% end %>
+
+          <%= link_to root_path do %>
+          <div class="tile">
+            <div class="tile_content">
+              <%= image_tag "icon_genre.png"%>
+              <%= "ジャンル一覧" %>
+            </div>
+          </div>
+          <% end %>
+
         </div>
       </div>
     <% end %>

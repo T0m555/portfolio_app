@@ -45,6 +45,7 @@ a {
 .inner {
   width: 1024px;
   margin: 0 auto;
+  background-color: springgreen;
 }
 .nav {
   width: 100%;
@@ -156,7 +157,37 @@ a {
   border: 1px green solid;
 }
 
+.main {
+  background-color: yellowgreen;
+  height: 100vh;
+}
 
+.tile_table {
+  height: 300px;
+  width: 1024px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  /* background-color: slategrey; */
+}
+
+.tile {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px black solid;
+  border-radius: 40px;
+  background-color: white;
+}
+
+.tile_content {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  font-size: 20px;
+}
 
 .card {
   display: flex;

@@ -3,7 +3,7 @@ class AlbumItemsController < ApplicationController
   def new
     @album = Album.find(params[:format])
     @album_item = AlbumItem.new
-    @items = Item.where.not(id: Album.find(params[:format]).items)
+    @items = Item.where.not(id: Album.find(params[:format]).items).where(user_id: current_user.id)
   end
 
   def create

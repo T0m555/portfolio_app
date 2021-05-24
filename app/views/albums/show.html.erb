@@ -1,26 +1,31 @@
 
 <h1>アルバム詳細</h1>
-<%= "アルバム名: #{@album.title}" %>
-<div>
-  <div>
-  <%= link_to "アルバム削除",album_path, method: :delete, class: :nav__btn %>
-  <%= link_to "アルバム編集", edit_album_path, class: :nav__btn %>
-  <%= link_to "アイテム登録", new_album_item_path(@album.id), class: :nav__btn %>
-  <%= link_to "アルバム一覧へ戻る", root_path, class: :nav__btn %>
+<main class="main">
+  <div class="inner">
+    <%= "アルバム名: #{@album.title}" %>
+    <div>
+      <div>
+      <%= link_to "アルバム削除",album_path, method: :delete, class: :nav__btn %>
+      <%= link_to "アルバム編集", edit_album_path, class: :nav__btn %>
+      <%= link_to "アイテム登録", new_album_item_path(@album.id), class: :nav__btn %>
+      <%= link_to "アルバム一覧へ戻る", albums_path, class: :nav__btn %>
+      </div>
+    </div>
+
+    <div>
+    登録アイテム一覧
+    </div>
+
+    <div>
+      <% @items.each do |item| %>
+      <div>
+      <%= item.title %>
+      <%= link_to "登録解除", album_item_path(@album.id, item.id,), method: :delete, class: :nav__btn %>
+      </div>
+      <% end %>
+      
+      
+    </div>
   </div>
 </div>
-
-<div>
-登録アイテム一覧
-</div>
-
-<div>
-  <% @items.each do |item| %>
-  <div>
-  <%= item.title %>
-  <%= link_to "登録解除", album_item_path(@album.id, item.id,), method: :delete, class: :nav__btn %>
-  </div>
-  <% end %>
-  
-  
-</div>
+</main>

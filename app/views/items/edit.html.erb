@@ -1,19 +1,20 @@
 <h1>アイテム編集</h1>
-<%= link_to "キャンセル", item_path(@item.id), class: :nav__btn %>
-<%= form_with(model: @item, method: :patch, local: true) do |f| %>
-<div>
-<%= f.text_field :title, placeholder: 'アイテム名を入力してください', value: @item.title %>
-</div>
-<div>
-<%= f.text_field :url, placeholder: 'URLを入力してください', value: @item.url %>
-</div>
-<div>
-<%= f.collection_select(:genre_id, @genres, :id, :name, {selected: @item.genre_id}, {class:"select-box", id:"item-sales-status"} )%>
-</div>
-<%= f.submit class: :nav__btn %>
+<main class="main">
+  <div class="inner">
+    <%= link_to "キャンセル", item_path(@item.id), class: :nav__btn %>
+    <%= form_with(model: @item, method: :patch, local: true) do |f| %>
+    <div>
+    <%= f.text_field :title, placeholder: 'アイテム名を入力してください', value: @item.title %>
+    </div>
+    <div>
+    <%= f.text_field :url, placeholder: 'URLを入力してください', value: @item.url %>
+    </div>
+    <div>
+    <%= f.collection_select(:genre_id, @genres, :id, :name, {selected: @item.genre_id}, {class:"select-box", id:"item-sales-status"} )%>
+    </div>
+    <%= f.submit class: :nav__btn %>
 
-<% end %>
-
-<%= @item.title %>
-<%= @item.url %>
-<%= @item.genre_id %>
+    <% end %>
+    </div>
+  </div>
+</main>
