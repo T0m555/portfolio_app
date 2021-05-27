@@ -17,7 +17,7 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     if @album.save
-      redirect_to root_path
+      redirect_to albums_path
     else
       render :new
     end
@@ -40,7 +40,7 @@ class AlbumsController < ApplicationController
       del.destroy if del
     end
     @album.destroy
-    redirect_to root_path
+    redirect_to albums_path
   end
 
   private

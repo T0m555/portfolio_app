@@ -1,6 +1,7 @@
-<h1>アイテム編集</h1>
 <main class="main">
   <div class="inner">
+  <%= link_to ">トップページへ戻る", root_path%>
+  <h1>アイテム編集</h1>
     <%= link_to "キャンセル", item_path(@item.id), class: :nav__btn %>
     <%= form_with(model: @item, method: :patch, local: true) do |f| %>
     <div>

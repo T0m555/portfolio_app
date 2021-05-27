@@ -1,0 +1,21 @@
+<main class="main">
+  <div class="inner">
+  <div>
+  <%= link_to ">トップページへ戻る", root_path%>
+  </div>
+  <div>
+  <%= link_to ">ジャンル一覧へ戻る", genres_path %>
+  </div>
+  <h1>ジャンル詳細</h1>
+    <div>
+      <%= link_to "ジャンル削除", genre_path, method: :delete, class: :nav__btn %>
+      <%= link_to "ジャンル編集", edit_genre_path, class: :nav__btn %>
+      
+    </div>
+
+    <div>
+      <%= @genre.name %>
+    </div>
+</div>
+</div>
+</main>

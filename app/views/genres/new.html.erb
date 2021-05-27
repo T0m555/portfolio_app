@@ -1,0 +1,15 @@
+<main class="main">
+  <div class="inner">
+  <%= link_to ">トップページへ戻る", root_path%>
+  <h1>ジャンル新規作成</h1>
+    <%= link_to "キャンセル", genres_path, class: :nav__btn %>
+    <%= form_with(model: @genre, local: true) do |f| %>
+    <div>
+      <%= f.label :ジャンル名, class: 'item-form__label' %>
+      <%= f.text_field :name, class: 'item_name item-form__input', placeholder: 'ジャンル名を入力してください' %>
+    </div>
+    <%= f.submit class: :nav__btn %>
+    <% end %>
+  </div>
+</div>
+</main>

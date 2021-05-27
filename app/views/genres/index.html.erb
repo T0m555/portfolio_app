@@ -1,0 +1,20 @@
+<main class="main">
+  <div class="inner">
+    <%= link_to ">トップページへ戻る", root_path%>
+    <h1>ジャンル一覧</h1>
+    <%= link_to "ジャンル新規作成", new_genre_path, class: :nav__btn %>
+      <div class="background">
+        <% if @genres == [] %>
+          ジャンルがありません。
+        <% else %>
+          <% @genres.each do |genre| %>
+            <%= link_to genre_path(genre.id), method: :get  do %>
+              <div class="card">
+                <%= genre.name %>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+  </div>
+</main>

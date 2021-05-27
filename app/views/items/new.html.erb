@@ -1,6 +1,7 @@
-<h1>アイテム新規作成</h1>
 <main class="main">
   <div class="inner">
+  <%= link_to ">トップページへ戻る", root_path%>
+  <h1>アイテム新規作成</h1>
     <%= link_to "キャンセル", items_path, class: :nav__btn %>
     <%= form_with(model: @item, local: true) do |f| %>
     <div>

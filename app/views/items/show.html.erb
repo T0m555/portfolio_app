@@ -1,10 +1,16 @@
-<h1>アイテム詳細</h1>
 <main class="main">
   <div class="inner">
+  <div>
+    <%= link_to ">トップページへ戻る", root_path%>
+  </div>
+  <div>
+    <%= link_to ">アイテム一覧へ戻る", items_path %>
+  </div>
+  <h1>アイテム詳細</h1>
     <div>
       <%= link_to "アイテム削除", item_path, method: :delete, class: :nav__btn %>
       <%= link_to "アイテム編集", edit_item_path, class: :nav__btn %>
-      <%= link_to "アイテム一覧へ戻る", items_path, class: :nav__btn %>
+
     </div>
 
     <div>
@@ -13,8 +19,16 @@
     <div>
       <%= @item.url %>
     </div>
+
     <div>
+    <% if @genres == [] %>
+      ジャンルが存在しません。
+      
+    <% elsif @genres.find(@item.genre_id) == nil %>
+      ジャンルが削除されています。
+    <% else %>
       <%= @genres.find(@item.genre_id).name %>
+    <% end %>
     </div>
 </div>
 </div>

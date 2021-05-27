@@ -1,0 +1,15 @@
+<main class="main">
+  <div class="inner">
+  <%= link_to ">トップページへ戻る", root_path%>
+  <h1>ジャンル編集</h1>
+    <%= link_to "キャンセル", genre_path(@genre.id), class: :nav__btn %>
+    <%= form_with(model: @genre, method: :patch, local: true) do |f| %>
+    <div>
+    <%= f.text_field :name, placeholder: 'ジャンル名を入力してください', value: @genre.name %>
+    </div>
+    <%= f.submit class: :nav__btn %>
+
+    <% end %>
+    </div>
+  </div>
+</main>
