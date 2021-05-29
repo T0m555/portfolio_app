@@ -336,6 +336,10 @@ a {
   font-size: 10px;
 }
 
+iframe{
+  pointer-events:none;
+}
+
 /* タブレット対応 */
 @media (max-width: 1024px) {
   .inner {

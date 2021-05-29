@@ -54,7 +54,7 @@ before_action :genres_set
   private
 
   def item_params
-    params.require(:item).permit(:title, :url, :genre_id).merge(user_id: current_user.id)
+    params.require(:item).permit(:title, :url, :genre_id, :description).merge(user_id: current_user.id)
   end
 
   def genres_set

@@ -1,6 +1,6 @@
 class GenresController < ApplicationController
   def index
-    @genres = Genre.all.where.not(id: 1)
+    @genres = Genre.all.where.not(id: 0)
   end
 
   def new
@@ -37,7 +37,7 @@ class GenresController < ApplicationController
     items = Item.where(params[:id])
     unless items == []
       items.each do |item|
-        item.update(genre_id: 1)
+        item.update(genre_id: 0)
       end
     end
 
@@ -50,6 +50,6 @@ class GenresController < ApplicationController
   private
 
   def genre_params
-    params.require(:genre).permit(:name)
+    params.require(:genre).permit(:name, :description)
   end
 end

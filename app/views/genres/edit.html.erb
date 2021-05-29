@@ -7,6 +7,9 @@
     <div>
     <%= f.text_field :name, placeholder: 'ジャンル名を入力してください', value: @genre.name %>
     </div>
+    <div>
+    <%= f.text_field :description, placeholder: '説明を入力してください', value: @genre.description %>
+    </div>
     <%= f.submit class: :nav__btn %>
 
     <% end %>

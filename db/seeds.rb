@@ -6,4 +6,4 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Genre.create(id: 1, name: "登録なし")
+Genre.create(id: 0, name: "ジャンルなし", description: "説明なし")

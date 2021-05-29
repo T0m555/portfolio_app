@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_05_24_010402) do
 
   create_table "albums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "title", null: false
+    t.text "description", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 2021_05_24_010402) do
 
   create_table "genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "name", null: false
+    t.text "description", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -39,6 +41,7 @@ ActiveRecord::Schema.define(version: 2021_05_24_010402) do
     t.text "title", null: false
     t.text "url", null: false
     t.integer "genre_id", null: false
+    t.text "description", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -5,6 +5,7 @@
     <%= link_to "キャンセル", album_path(@album.id), class: :nav__btn %>
     <%= form_with(model: @album, method: :patch, local: true) do |f| %>
     <%= f.text_field :title, class: 'album_name album-form__input', placeholder: 'アルバム名を入力してください', value: @album.title %>
+    <%= f.text_field :description, class: 'album_name album-form__input', placeholder: '説明を入力してください', value: @album.description %>
     <%= f.submit "変更する" ,class: :nav__btn %>
     <% end %>
   </div>

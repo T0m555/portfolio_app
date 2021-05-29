@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
 
-  validates :title, :url, presence: true
+  validates :title, :url, :description, presence: true
 
   belongs_to :user
   has_many :album_items

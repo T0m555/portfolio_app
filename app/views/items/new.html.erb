@@ -16,6 +16,10 @@
       <%= f.label :ジャンル, class: 'item-form__label' %>
       <%= f.collection_select(:genre_id, @genres, :id, :name, {}, {class:"select-box", id:"item-sales-status"} ) %>
     </div>
+    <div>
+      <%= f.label :説明, class: 'item-form__label' %>
+      <%= f.text_field :description, class: 'item_url item-form__input', placeholder: '説明を入力してください' %>
+    </div>
     <%= f.submit class: :nav__btn %>
     <% end %>
   </div>

@@ -8,6 +8,10 @@
       <%= f.label :ジャンル名, class: 'item-form__label' %>
       <%= f.text_field :name, class: 'item_name item-form__input', placeholder: 'ジャンル名を入力してください' %>
     </div>
+    <div>
+      <%= f.label :説明, class: 'item-form__label' %>
+      <%= f.text_field :description, class: 'item_name item-form__input', placeholder: '説明を入力してください' %>
+    </div>
     <%= f.submit class: :nav__btn %>
     <% end %>
   </div>

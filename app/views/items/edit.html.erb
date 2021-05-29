@@ -13,6 +13,9 @@
     <div>
     <%= f.collection_select(:genre_id, @genres, :id, :name, {selected: @item.genre_id}, {class:"select-box", id:"item-sales-status"} )%>
     </div>
+    <div>
+    <%= f.text_field :description, placeholder: '説明を入力してください', value: @item.description %>
+    </div>
     <%= f.submit class: :nav__btn %>
 
     <% end %>
